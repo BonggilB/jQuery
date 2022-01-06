@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포커스</title>
+    <script src="/Jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#txt').on({
+                'focus':function(){
+                    $('#btn').css({
+                        fontSize: '30px',
+                    })
+                },
+                'focusout':function(){
+                    $('label').css({
+                        fontSize:'16px',
+                    })
+                },
+                'blur':function(){
+                    $('label').css({
+                        display:'none',
+                    })
+                },
+                'keydown':function(e){
+                    if(e.keycode == 65){
+                        $(this).blud();
+                    }
+                }
+            })
+            $('label').on({
+                'click':function(){
+                    $('#txt').blur();
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <label>클릭</label>
+    <input type="text" id="txt">
+</body>
+</html>

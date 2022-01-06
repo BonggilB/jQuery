@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="/Jquery/jquery.js"></script>
+    <script>
+        img= imgSrc = $('img').after('src');
+        let imgSrc = $('img').attr('src');
+        setInterval($(function(){
+            console.log($('input').attr('value'));
+
+            let linkUrl = $('a').attr('href');
+            console.log(typeof linkUrl);
+            linkUrl = linkUrl.replace('naver','google');
+            console.log(linkUrl);
+            $('a').text('google').attr({
+                 href:linkUrl,
+                target:'_self',
+            });
+
+            console.log(imgSrc);
+
+            let nowDate = new Date();
+            let nowHour = nowDate.getHours();
+            console.log(nowHour);
+            if(nowHour>=18){ 
+                imgSrc = imgSrc.replace('fran','sto');
+            }else{
+                imgSrc = imgSrc.replace('sto','fran');
+            }
+            $('img').attr('src',imgSrc);
+        })) 
+    </script>
+</head>
+<body>
+    <input type="text" value="홍길동">
+    <a href="https://www.naver.com" target="_blank">네이버</a>
+    <img src="/images/img-fran.gif" alt="이미지1">
+</body>
+</html>

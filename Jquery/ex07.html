@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/Jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $('li:contains("list5")').css({
+                color:'red',
+            })
+            $('li').has('a').css({
+                color:'green',
+            })
+            $('li').filter('list').css({
+                color:'blue',
+            })
+            $('li').filter('#list01').css({
+                color:'blue',
+            })
+            $('li:')
+        })
+    </script>
+</body>
+</html>
